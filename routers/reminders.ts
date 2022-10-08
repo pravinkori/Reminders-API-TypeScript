@@ -1,15 +1,11 @@
 import { Router } from "express";
+import CreateReminderDto from "../dtos/create-reminders";
 
 const router = Router();
 
 router.get('/', (req, res) => {
     res.send('List of reminders')
 });
-
-// DTO: Data Transfer Object
-interface CreateReminderDto {
-    title: string
-}
 
 router.post('/', (req, res) => {
     const { title } = req.body as CreateReminderDto;
